@@ -41,12 +41,12 @@ const responses = {
   '/success': ['This is a successful response', '200', 'success'],
   '/badRequest': ['Missing valid query parameter set to true', '400', 'badRequest'],
   '/unauthorized': ['Missing loggedIn query parameter set to yes', '401', 'unauthorized'],
-  '/forbidden': ['You do not have access to this content', ' 403', ' forbidden'],
+  '/forbidden': ['You do not have access to this content', ' 403', 'forbidden'],
   '/internal': ['Internal Server Error. Something went wrong', '500', 'internalError'],
   '/notImplemented': ['A get request for this page has not been implemented yet. '
        + 'Check again later for updated content', '501', 'notImplemented'],
   '/notFound': ['The page you are looking for was not found', '404', 'notFound'],
-  badRequestWithQuery: ['This request has the requested parameters', '200', ' success'],
+  badRequestWithQuery: ['This request has the requested parameters', '200', 'success'],
   unauthorizedWithQuery: ['You have successfully viewed the content ', '200', 'success'],
 };
 
