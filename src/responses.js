@@ -51,7 +51,7 @@ const responses = {
 };
 
 const generateResponse = (request, response, acceptedTypes) => {
-  let [parts] = responses['/notFound'];
+  let parts = responses['/notFound'];
   let message = null;
   let code = null;
   let id = null;
@@ -66,9 +66,7 @@ const generateResponse = (request, response, acceptedTypes) => {
     parts = responses[request.url];
   }
   // this is what makes eslint happy
-  [message] = parts;
-  [,code] = parts;
-  [,, id] = parts;
+  [message, code, id] = parts;
 
   if (acceptedTypes[0] === 'text/xml') {
     return respond(request, response, makeXML(message, id), 'text/xml', code);
