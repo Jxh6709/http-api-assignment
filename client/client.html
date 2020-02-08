@@ -30,9 +30,14 @@
         p.textContent = `Message: ${obj.message}`;
       } else if (type === 'text/xml') {
         const message = xhr.responseXML.querySelector('message').textContent;
-        const id = xhr.responseXML.querySelector('id').textContent;
 
-        h1.textContent = (id) ? idMessageMatches[id] : 'Success';
+        if (xhr.status === 200) {
+          h1.textContent = 'Success';
+        }
+        else {
+          const id = xhr.responseXML.querySelector('id').textContent;
+          h1.textContent = idMessageMatches[id];
+        }
         p.textContent = `Message: ${message}`;
       }
 
